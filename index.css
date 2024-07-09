@@ -16,4 +16,19 @@ body{
     background-repeat: no-repeat;
     background-size: 35%;
     background-position: right 40px top 70px;
+
+}
+
+.container{
+    padding: 10x 10%;
+    position: relative;
+}
+nav{
+    position: absolute;
+    top:4%;
+    right: 10%;
+}
+nav ul li {
+    display: inline-block;
+    margin-right: 10px;
 }
