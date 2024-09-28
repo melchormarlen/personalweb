@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
     <title> Personal Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/914ef49f1e.js" crossorigin="anonymous"></script>
 </head>
 <body> 
 <div id="header">
@@ -37,21 +38,73 @@
                 <h1 class="sub-title">About Me</h1>
                 <p>xxxxFiller text temporary</p>
                 <div class="tab-titles">
-                    <p class="tab-links active-link">Skills</p>
-                    <p class="tab-links">Experience</p>
-                    <p class="tab-links">Education</p>
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
                 </div>
-                <div class="tab-contents">
+                <div class="tab-contents active-tab" id="skills">
                     <ul>
-                        <li><span>UI/UX</span><br>Designing Web/App Interfaces/Development</li>
-                        <li><span>Analytics</span><br> Data Analytics</li>
-                        <li><span>Database Management</span><br> Database Recreations</li>
+                        <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                        <li><span>Web Development</span><br>Web App Development</li>
+                        <li><span>Database Management</span><br>Database Recreation</li>
+                        <li><span>Data Analytics</span><br>Social Media Management</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience" >
+                    <ul>
+                        <li><span>August 2024-Current</span><br>UI/Marketing Sub-Team Lead for IPRO IIT </li>
+                        <li><span>June 2024-Current</span><br>SHPE IIT Secretary and Public Relations</li>
+                        <li><span>August 2023- June 2024</span> VP/Director of User Development CODIFY IIT Student Org</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022-2026</span><br> Bachelor of Science in Computer Science </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+<!--Services-->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>Temporary TextTemporary TextTemporary TextTemporary TextTemporary TextTemporary Text</p>
+                <a href="#"> Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-pen-nib"></i>
+                <h2>UI/UX Design</h2>
+                <p>Temporary TextTemporary TextTemporary TextTemporary TextTemporary TextTemporary Text</p>
+                <a href="#"> Learn More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>Data Analytics</h2>
+                <p>Temporary TextTemporary TextTemporary TextTemporary TextTemporary TextTemporary Text</p>
+                <a href="#"> Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
 </html>
